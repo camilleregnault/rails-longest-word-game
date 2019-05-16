@@ -11,7 +11,6 @@ class GamesController < ApplicationController
   end
 
   def score
-    raise
     @letters = params[:letters]
     @your_word = params[:your_word].upcase
 
