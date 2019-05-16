@@ -2,8 +2,15 @@ require 'json'
 require 'open-uri'
 
 class GamesController < ApplicationController
+  VOWELS = %w(A E I O U Y)
+
   def new
-    @letters = ('A'..'Z').to_a.sample(10) * ' '
+    @letters = VOWELS.to_a.sample(5)
+    @letters += ('A'..'Z').to_a.sample(5)
+    @letters = @letters.join(' ')
+    # @letters = Array.new(5) { VOWELS.sample }
+    # @letters += Array.new(5) { (('A'..'Z').to_a - VOWELS).sample }
+    # @letters.shuffle!.split(',')
   end
 
   def letter_in_grid(your_word)
@@ -12,7 +19,7 @@ class GamesController < ApplicationController
 
   def score
     @letters = params[:letters]
-    @your_word = params[:your_word].upcase
+    @your_word = (params[:your_word] || "").upcase
 
     url = "https://wagon-dictionary.herokuapp.com/#{@your_word}"
     word_serialized = open(url).read
