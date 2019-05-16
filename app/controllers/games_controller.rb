@@ -23,7 +23,7 @@ class GamesController < ApplicationController
       @result = "Sorry but #{@your_word} can't be built out of the letters"
     when !word['found']
       @result = "Sorry but #{@your_word} does not seem to be valid English word..."
-    when letter_in_grid(@your_word)
+    when !letter_in_grid(@your_word)
       @result = "wrong"
     else @result = "Congratulations!!!!"
     end
