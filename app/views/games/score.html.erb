@@ -1,9 +1,11 @@
-<h1>Game Score</h1>
+<div class="container">
+  <h1>Game Score</h1>
 
-<p>Letters were <%= @letters %></p>
-<p>Your word is <strong><%= @your_word %></strong>  </p>
-<p><%= @result %></p>
+  <p>Letters were <%= @letters %></p>
+  <p>Your word is <strong><%= @your_word %></strong>  </p>
+  <p class='letters' ><%= @result %></p>
 
-<br>
+  <br>
 
-<%= link_to "Play again", new_path %>
+  <button class="btn btn-primary"><%= link_to "Play again", new_path %> </button>
+</div>

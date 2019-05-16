@@ -24,7 +24,7 @@ class GamesController < ApplicationController
     when !word['found']
       @result = "Sorry but #{@your_word} does not seem to be valid English word..."
     when !letter_in_grid(@your_word)
-      @result = "wrong"
+      @result = "Wrong answer."
     else @result = "Congratulations!!!!"
     end
   end
