@@ -1,5 +1,7 @@
 {
   "name": "rails-longest-word-game",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gh-pages": "^2.1.0"
+  }
 }
